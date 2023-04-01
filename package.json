@@ -1,0 +1,36 @@
+{
+    "name": "@yzfe/ts-jsonschema-sync",
+    "version": "0.0.0",
+    "description": "Monitor the interface definition of ts and generate JSON schema synchronously once there is any modification",
+    "main": "./dist/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/index.d.ts",
+    "author": "vfasky@me.com",
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org"
+    },
+    "files": [
+        "dist",
+        "package.json",
+        "README.md"
+    ],
+    "scripts": {
+        "dev": "npm run build -- --watch",
+        "build": "tsup",
+        "docs": "npm run cpHome && vuepress dev docs",
+        "docs:build": "npm run cpHome && NODE_ENV=production vuepress build docs",
+        "test": "ts-node --transpile-only --skip-project test"
+    },
+    "dependencies": {
+        "glob": "^9.3.2",
+        "typescript-json-schema": "^0.55.0"
+    },
+    "devDependencies": {
+        "@types/node": "^18.15.11",
+        "ts-node": "^10.9.1",
+        "tsup": "^6.7.0",
+        "typescript": "^5.0.3"
+    }
+}
