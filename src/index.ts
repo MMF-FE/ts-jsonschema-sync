@@ -99,7 +99,7 @@ export function getTypeNames(options: Options) {
     return types
 }
 
-function getDefinition<T = string>(name: T, options: Options) {
+export function getDefinition<T = string>(name: T, options: Options) {
     const jsGen = getJsGen(options.rootPath)
     if (!jsGen) {
         return {}
